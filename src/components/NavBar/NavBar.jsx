@@ -1,5 +1,6 @@
 import React from "react";
 import 'bulma/css/bulma.min.css';
+import CartWidget from "../CartWidget/CartWidget";
 
 
 const NavBar = () =>{
@@ -18,11 +19,7 @@ const NavBar = () =>{
                     <a className="navbar-item"><strong>Accesorios</strong></a>
                     <a className="navbar-item"><strong>Indumentaria</strong></a>
                     <div className="navbar-item">
-                        <div className="buttons">
-                            <a className="button is-warning">
-                             <strong>Carrito</strong>
-                             </a>
-                        </div>
+                            <a><CartWidget /></a>
                      </div>
                 </div>
             </div>
