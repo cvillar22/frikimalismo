@@ -3,11 +3,13 @@ import 'bulma/css/bulma.min.css';
 import ConoImg from '../../assets/cono.svg';
 
 
-const ItemListContainer = () =>{
+const ItemListContainer = (props) =>{
+
+    const{greetings}=props;
     return(
         <div>
             <div className="avisoInicio p-5">
-                <h1>SITIO EN CONSTRUCCIÓN</h1>
+                <h1>{greetings}</h1>
             </div>
 
             <div>
