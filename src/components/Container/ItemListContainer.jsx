@@ -1,20 +1,33 @@
-import React from "react";
+import {useEffect, useState} from "react";
 import 'bulma/css/bulma.min.css';
-import ConoImg from '../../assets/cono.svg';
+import Load from "../../helpers/load";
+import ItemList from "./itemList";
 
 
-const ItemListContainer = (props) =>{
 
-    const{greetings}=props;
+
+const ItemListContainer = () =>{
+
+    const[data,setData]= useState({
+        items: [],
+        isLoading: true,
+    });
+
+    const requestData = () =>{
+
+    setTimeout(function startFetch(){
+        fetch("products.json")
+        .then((response)=> response.json())
+        .then((json)=> setData({items: json, isLoading: false}));
+    },2000);
+
+};
+
+useEffect(requestData, []);
+
     return(
         <div>
-            <div className="avisoInicio p-5">
-                <h1>{greetings}</h1>
-            </div>
-
-            <div>
-                <img title="Cono" className="conoImg" src={ConoImg} alt= "Cono"/>
-            </div>
+            {data.isLoading ?  <Load /> : <ItemList items={data.items} />}
         </div>
     );
 }
