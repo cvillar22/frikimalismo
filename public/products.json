@@ -10,7 +10,7 @@
     {
       "id": 2,
       "title": "Producto 2",
-      "stock": 10,
+      "stock": 6,
       "price": 900,
       "prodImg": "https://via.placeholder.com/150",
       "descrip": "producto random"
@@ -26,7 +26,7 @@
     {
       "id": 4,
       "title": "Producto 4",
-      "stock": 10,
+      "stock": 4,
       "price": 300,
       "prodImg": "https://via.placeholder.com/150",
       "descrip": "producto random"

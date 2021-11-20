@@ -1,4 +1,6 @@
 import React from "react";
+import ItemCountContainer from "../Counter/ItemCountContainer";
+
 
 const Item = ({ title, price, prodImg, stock,  descrip }) => {
   return (
@@ -21,7 +23,9 @@ const Item = ({ title, price, prodImg, stock,  descrip }) => {
       </div>
       
       <footer className="card-content">
-         <button className="button is-dark" type="button" title="Add to cart">
+         
+         <ItemCountContainer stock={stock} initial={1} />
+         <button className="button is-danger" type="button" title="Add to cart">
           comprar
          </button>
       </footer>
