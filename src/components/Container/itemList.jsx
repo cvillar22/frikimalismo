@@ -6,14 +6,14 @@ const ItemList = ({ items }) => {
 
     const generateItem = item => {
         return (
-            <div key={item.id} className="column is-justify-content-center p-1 m-6">
+            <div key={item.id} className="column is-narrow is-one-third p-6">
                 <Item {...item} />
             </div>
         )
     };
 
     return (
-        <div className="columns is-multiline is-flex">
+        <div className="columns is-multiline is-centered p-4 m-3">
             {items.map(generateItem)}
         </div>
     );

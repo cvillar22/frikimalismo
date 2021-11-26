@@ -5,8 +5,8 @@ const Cart = () => {
    
   
     return (
-      <div>
-          <img title="CartPage"  className="cartImgPage" src={Vader} alt="CartPage" />
+      <div className="cartImgPage">
+          <img title="CartPage"  className="cartImgContent" src={Vader} alt="CartPage" />
       </div>
     );
   };

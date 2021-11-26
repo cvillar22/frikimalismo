@@ -21,12 +21,10 @@ const NavBar = () =>{
     return(
         <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
-            <Link to="/" >
-             <a className="navbar-item has-text-white">
+            <Link to="/" className="navbar-item has-text-white" >
                 <h1>
                     <strong>FRIKIMALISMO</strong>
                 </h1>
-            </a>
             </Link>
             
             
@@ -39,7 +37,7 @@ const NavBar = () =>{
 
                     <div className="navbar-item">
                             
-                            <a><CartWidget /></a>
+                            <Link to= '/cart'><a><CartWidget /></a></Link>
                             
                      </div>
                 </div>
