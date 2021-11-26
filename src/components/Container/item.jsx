@@ -1,8 +1,11 @@
 import React from "react";
 import ItemCountContainer from "../Counter/ItemCountContainer";
+import { Link } from "react-router-dom";
 
 
-const Item = ({ title, price, prodImg, stock,  descrip }) => {
+const Item = ({prodImg, title, price, stock,id})=>{
+  
+
   return (
     <div className="card">
 
@@ -17,17 +20,17 @@ const Item = ({ title, price, prodImg, stock,  descrip }) => {
         <b className="is-block"> ${price} </b>
         <small className="tag is-info is-light">stock: {stock}</small>
       </div>
-
-      <div>
-        <small className="tag">{descrip}</small>
-      </div>
       
-      <footer className="card-content">
+      <footer className="card-content is-flex-direction-column is-align-items-center">
          
          <ItemCountContainer stock={stock} initial={1} />
-         <button className="button is-danger" type="button" title="Add to cart">
+         <button className="button is-danger p-2 m-2" type="button" title="Add to cart">
           comprar
          </button>
+         <Link to={`/product/${id}`}><button className="button is-dark p-2 m-2" type="button" title="detail">
+          Descripción
+         </button>
+         </Link>
       </footer>
         
     </div>
