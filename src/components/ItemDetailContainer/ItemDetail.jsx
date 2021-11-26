@@ -1,5 +1,7 @@
 import React from "react";
 import ItemCountContainer from '../Counter/ItemCountContainer'
+
+
 const ItemDetail = ({itemFiltered}) => {
   
  return (

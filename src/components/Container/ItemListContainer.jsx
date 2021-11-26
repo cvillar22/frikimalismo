@@ -19,12 +19,16 @@ const ItemListContainer = () =>{
   const requestData = () => {
     setTimeout(function startFetch() {
       fetch("/products.json")
-        .then((response) => response.json())
+        .then((response) => 
+        response.json())
         .then((json) => {
-          const products = id
-        ? json.filter((product) => product.category === +id)
-        : json;
-          setData({ items: json, isLoading: false })
+            if(id){
+                
+                const dataFiltrada =json.filter((item)=>item.category === id);
+                json.filter((product) => product.category === +id)
+                setData({ items: dataFiltrada, isLoading: false })
+            }else{setData({items: json, isLoading:false})}
+        
         });
     }, 2000);
   };

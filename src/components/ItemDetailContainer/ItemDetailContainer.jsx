@@ -12,7 +12,7 @@ const ItemDetailContainer = (props)=>{
 		fetch("/products.json")
 		.then((res)=> res.json())
 		.then((json)=> {
-			const productFiltered = json.find( prod => prod.id === +id);
+			const productFiltered = json.find( prod => prod.id.toString() === id);
 			setProduct(productFiltered)
 		});	
 	}
