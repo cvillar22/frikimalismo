@@ -1,3 +1,20 @@
+Frikimalismo es una e-commerce destinada a comerciar productos "frikis", de la cultura del cómic, de la tv y cinematográfica.
+
+Para su realizacion se incluyó la libreria de Bulma para el estilado.
+
+La idea principal es hacer una página dinamica, sencilla donde el usuario pueda ver el catalogo de productos, el detalle de cada uno y luego pueda realizar su pedido facilmente.
+
+Entre las opciones para el usuario, puede comprar directamente desde el catalogo, con el boton comprar o ver el detalle y despues realizar la compra.
+
+Tambien los productos están categorizados, por lo que puede explorar desde las opciones de la barra de navegación.
+
+
+F R I K I M A L I S M O - R E A C T JS
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
