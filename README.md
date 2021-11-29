@@ -13,6 +13,8 @@ F R I K I M A L I S M O - R E A C T JS
 
 
 
+Nota: Comparto link para ver el progreso del proyecto https://drive.google.com/file/d/1RA7Z2H1rQ7__IVw8fdni9le7MWdMJGSz/view?usp=sharing
+
 
 
 # Getting Started with Create React App
