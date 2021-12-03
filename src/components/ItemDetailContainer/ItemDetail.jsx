@@ -1,9 +1,26 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
-import ItemCountContainer from '../Counter/ItemCountContainer'
+import ItemCountContainer from '../Counter/ItemCountContainer';
+import { useCartContextProvider } from "../../context/cartContext";
 
 
 const ItemDetail = ({itemFiltered}) => {
+
+  const [count, setCount] = useState(1);
+
+  const updateCount = (event)=> setCount(count + +event.target.value);
+
+  const [finished, setFinished] = useState(false);
+
+  const handleState = () =>setFinished(!finished);
+
+  const {addItem} = useCartContextProvider();
+
+  const handleSend = () => {
+    const newItemFiltered = { ...itemFiltered , quantity: count };
+    addItem(newItemFiltered);
+  };
+ 
   
  return (
     <div className="columns is-mobile is-centered">
@@ -19,10 +36,37 @@ const ItemDetail = ({itemFiltered}) => {
         <small className="tag is-info is-light">stock: {itemFiltered.stock}</small>
         </div>
       </section>
+      
       <footer className="card-footer is-flex-direction-column">
-      <ItemCountContainer stock={itemFiltered.stock} initial={1} />
-        <Link to='/cart'><button className="button is-dark is-small p-2 m-4" type="button" title="description">Añadir al carro</button></Link> 
-      </footer>
+      
+      {!finished ? ( 
+
+      <>
+      
+      <ItemCountContainer stock={itemFiltered.stock} initial={1} count={count} onAdd={updateCount} />
+        <button  onClick ={()=>{handleState(); handleSend(itemFiltered);}} className="button is-dark is-normal p-2 m-4" type="button">
+          Comprar
+        </button> 
+
+      </>
+
+      ):(
+      <>
+
+        <Link to ="/cart" onClick={handleState}>
+          <button onClick = {handleState} className= "button is-dark is-normal is-hovered m-4">
+            Listo!
+          </button>
+        </Link>
+       
+        <button onClick = {()=> {handleState();}} className= "button is-danger is-small m-1">
+        Cambiar
+        </button>
+
+      </>
+
+      )}
+        </footer>
       </div>
     </div>
   );

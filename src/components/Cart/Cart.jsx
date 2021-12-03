@@ -1,14 +1,17 @@
-import React from "react";
-import Vader from "../../assets/vader.jpg";
+import React, {useEffect} from "react";
+import CartFull from "./CartFull";
+import CartEmpty from "./CartEmpty";
+import { useCartContextProvider } from "../../context/cartContext";
 
 const Cart = () => {
-   
-  
-    return (
-      <div className="cartImgPage">
-          <img title="CartPage"  className="cartImgContent" src={Vader} alt="CartPage" />
-      </div>
-    );
-  };
-  
-  export default Cart;
+
+  const { hasItemsInCart } = useCartContextProvider();
+
+  return (
+    <div className='container is-max-desktop p-4'>
+      {hasItemsInCart() ? <CartFull /> : <CartEmpty />}
+    </div>
+  );
+};
+
+export default Cart;
