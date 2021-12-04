@@ -22,7 +22,7 @@ const Item = ({prodImg, title, price, stock,id})=>{
       
       <footer className="card-content is-direction-column is-align-items-center"> 
          <Link to={`/product/${id}`}><button className="button is-dark p-2 m-2" type="button" title="detail">
-        DESCRIPCIÓN
+        Descripción
          </button>
          </Link>
       </footer>
